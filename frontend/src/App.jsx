@@ -130,6 +130,7 @@ export default function App() {
     setLoadingStep('Accessing AI Model Nodes (Gemini 3.5 & ChatGPT)...');
     const t1 = setTimeout(() => setLoadingStep('Analyzing local recommendation clusters...'), 1400);
     const t2 = setTimeout(() => setLoadingStep('Extracting competitor share of voice...'), 2600);
+    const t3 = setTimeout(() => setLoadingStep('Synthesizing multi-model visibility insights...'), 5000);
 
     try {
       const response = await fetch(`${API_BASE}/api/scan/quick`, {
@@ -144,10 +145,11 @@ export default function App() {
 
       clearTimeout(t1);
       clearTimeout(t2);
+      clearTimeout(t3);
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.detail || 'Backend API error. Ensure FastAPI is running on port 8000.');
+        throw new Error(errorData.detail || 'The AI scan engine is initializing. Please retry in a few seconds.');
       }
 
       const data = await response.json();
