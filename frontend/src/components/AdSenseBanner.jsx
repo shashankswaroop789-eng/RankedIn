@@ -6,7 +6,7 @@ import React, { useEffect, useRef } from 'react';
  */
 export default function AdSenseBanner({
   adSlot = '1234567890',
-  adClient = import.meta.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-XXXXXXXXXXXXXXXX',
+  adClient = import.meta.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-1017109748072844',
   adFormat = 'auto',
   fullWidthResponsive = 'true',
   className = '',
